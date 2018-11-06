@@ -87,7 +87,6 @@ public class CategoryPage extends  BasePage{
         List<WebElement> itemsOnPage = getDriver().findElements(By.xpath("//div[@class = 'tile' and @data-index != '-1']"));
         int size = itemsOnPage.size();
         String patern = getElementXPath(itemsOnPage.get(size - 1));
-        System.out.println(patern);
 
         // xpath добавить в козину
         String toCardXpath = String.format("%s//button[@class = 'buy-button blue-cream enlarged button flat-button tile-buy-button']/span", patern);

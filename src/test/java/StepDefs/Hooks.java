@@ -36,7 +36,7 @@ public class Hooks {
 
         getDriver().manage().window().maximize();
         getDriver().manage().deleteAllCookies();
-        //getDriver().manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+        getDriver().manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         baseUrl = properties.getProperty("url");

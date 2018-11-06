@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 import static ozon.util.TestDriver.getDriver;
 
 public abstract class BasePage {
@@ -44,6 +46,16 @@ public abstract class BasePage {
 
     public String getElementXPath(WebElement element) {
         return (String)((JavascriptExecutor) getDriver()).executeScript("gPt=function(c){if(c.id!==''){return'id(\"'+c.id+'\")'}if(c===document.body){return c.tagName}var a=0;var e=c.parentNode.childNodes;for(var b=0;b<e.length;b++){var d=e[b];if(d===c){return gPt(c.parentNode)+'/'+c.tagName+'['+(a+1)+']'}if(d.nodeType===1&&d.tagName===c.tagName){a++}}};return gPt(arguments[0]).toLowerCase();", element);
+    }
+
+    public void waitForClickable(WebElement element) {
+        WebDriverWait wait = new WebDriverWait(getDriver(), 10);
+        wait.pollingEvery(Duration.ofMillis(300))
+                .until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public void clickElementJS(WebElement element) {
+        ((JavascriptExecutor)getDriver()).executeScript("arguments[0].click", element);
     }
 
 }

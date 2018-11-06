@@ -37,6 +37,9 @@ public class ShoppingCartPage extends  BasePage{
     @FindBy(xpath = "//div[@class = 'bFlatButton mHuge mGreen jsMakeOrder']")
     WebElement confirmTheOrderButton;
 
+    @FindBy(xpath = "//a[@class = 'bFlatButton mHuge']")
+    WebElement startShoppingButton;
+
     public void checkSoppingCartForItems() {
         Assert.assertEquals("Items in cart is not found", 1, itemNameInCardList.size());
 
@@ -52,25 +55,28 @@ public class ShoppingCartPage extends  BasePage{
 
         int expectedPrice = getPriceItem();
         Assert.assertEquals("Names of items is not equal", actualPriceInt, expectedPrice);
-
-        System.out.println(actualPrice + " " + actualText);
     }
 
     public void deleteItemsFromCart() {
 
         new WebDriverWait(getDriver(), 5).until(ExpectedConditions.visibilityOf(confirmTheOrderButton));
         Assert.assertEquals("Delete button is not found", 1, removeButtonsList.size());
-        click(removeButtonsList.get(0));
-    }
 
-    public void checkSoppingCartForEmpty() {
+        waitForClickable(removeButtonsList.get(0));
 
-        try{
-            Thread.sleep(5000);
+        try {
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
+        click(removeButtonsList.get(0));
+
+    }
+
+    public void checkSoppingCartForEmpty() {
+
+        waitForClickable(startShoppingButton);
         checkText(titleOfShoppingCard, "Корзина пуста");
     }
 

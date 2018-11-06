@@ -1,6 +1,6 @@
 *.iml
 /target/
-/driver/
+
 /allure-results/
 /.idea/
 /.allure/

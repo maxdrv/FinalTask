@@ -45,7 +45,7 @@ public class CategoryPage extends  BasePage{
 
         List<WebElement> preloader = getDriver().findElements(By.xpath("//div[@class = 'five-dots preloader m-full-preloader']"));
         if(preloader.get(0).isDisplayed()){
-            new WebDriverWait(getDriver(), 5).until(ExpectedConditions.invisibilityOf(preloader.get(0)));
+            new WebDriverWait(getDriver(), 10).until(ExpectedConditions.invisibilityOf(preloader.get(0)));
         }
     }
 
@@ -64,7 +64,7 @@ public class CategoryPage extends  BasePage{
             List<WebElement> preloader = getDriver().findElements(By.xpath("//div[@class = 'five-dots preloader m-full-preloader']"));
             Assert.assertEquals("Preloader is is not found", 1, preloader.size());
             if(preloader.get(0).isDisplayed()){
-                new WebDriverWait(getDriver(), 5).until(ExpectedConditions.invisibilityOf(preloader.get(0)));
+                new WebDriverWait(getDriver(), 10).until(ExpectedConditions.invisibilityOf(preloader.get(0)));
             }
         }
     }
@@ -78,7 +78,7 @@ public class CategoryPage extends  BasePage{
         List<WebElement> preloader = getDriver().findElements(By.xpath("//div[@class = 'five-dots preloader m-full-preloader']"));
         Assert.assertEquals("Preloader is is not found", 1, preloader.size());
         if(preloader.get(0).isDisplayed()){
-            new WebDriverWait(getDriver(), 5).until(ExpectedConditions.invisibilityOf(preloader.get(0)));
+            new WebDriverWait(getDriver(), 10).until(ExpectedConditions.invisibilityOf(preloader.get(0)));
         }
     }
 

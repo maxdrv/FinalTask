@@ -24,7 +24,9 @@ public class ShoppingCartPage extends  BasePage{
     @FindBy(xpath = "//span[@class = 'jsInnerContentpage_title']")
     WebElement titleOfShoppingCard;
 
-    @FindBy(xpath = "//div[@class = 'eCartControls_buttons']")
+    //div[@class = 'eCartControls_buttons']
+    //div[@class='bIconButton mRemove mGray jsRemoveAll']
+    @FindBy(xpath = "//div[@class='bIconButton mRemove mGray jsRemoveAll']")
     List<WebElement> removeButtonsList;
 
     //span[@class = 'eCartItem_nameValue']

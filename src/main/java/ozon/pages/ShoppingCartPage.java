@@ -59,7 +59,8 @@ public class ShoppingCartPage extends  BasePage{
 
     public void deleteItemsFromCart() {
 
-        new WebDriverWait(getDriver(), 5).until(ExpectedConditions.visibilityOf(confirmTheOrderButton));
+        waitForClickable(confirmTheOrderButton);
+        //new WebDriverWait(getDriver(), 5).until(ExpectedConditions.visibilityOf(confirmTheOrderButton));
         Assert.assertEquals("Delete button is not found", 1, removeButtonsList.size());
 
         waitForClickable(removeButtonsList.get(0));

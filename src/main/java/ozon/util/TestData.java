@@ -4,13 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TestData {
-    private static Map<String, Object> stash = new HashMap<>();
-
-    public static Map<String, Object> getStash() {
-        return stash;
-    }
-
-
+    
     public static String getDescriprionItem() {
         return descriprionItem;
     }

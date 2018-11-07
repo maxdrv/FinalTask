@@ -13,52 +13,52 @@ public class OzonStepDefs {
     OzonScenario1 scenario1 = new OzonScenario1();
 
     @Когда("^Выбрать пункт меню – (.+)$")
-    public void choseMenuItem(String menuItem) throws Throwable {
+    public void choseMenuItem(String menuItem) {
         scenario1.choseMenuItem(menuItem);
     }
 
     @Когда("^Выбрать категорию – (.+)$")
-    public void choseCategory(String category) throws Throwable {
+    public void choseCategory(String category) {
         scenario1.choseCategory(category);
     }
 
     @Когда("^Выбрать производителя – (.+)$")
-    public void choseManufacturer(String manufacturerOne) throws Throwable {
+    public void choseManufacturer(String manufacturerOne) {
         scenario1.choseManufacturerOne(manufacturerOne);
     }
 
     @Когда("^Выбрать производителя$")
-    public void choseManufacturer(List<String> stringList) throws Throwable {
+    public void choseManufacturer(List<String> stringList) {
         scenario1.choseManufacturer(stringList);
     }
 
     @Тогда("^Заполнить цена от – (\\d+)$")
-    public void choseMinPrice(int minPrice) throws Throwable {
+    public void choseMinPrice(int minPrice) {
         scenario1.choseMinPrice(minPrice);
     }
 
     @Тогда("^Добавить первый товар в корзину, запомнить название и цену$")
-    public void addFirstItemToChoppingCart() throws Throwable {
+    public void addFirstItemToChoppingCart(){
         scenario1.addFirstItemToChoppingCart();
     }
 
     @Когда("^Перейти в корзину$")
-    public void moveToShoppingCart() throws Throwable {
+    public void moveToShoppingCart(){
         scenario1.moveToShoppingCart();
     }
 
     @Тогда("^Проверить, что в корзине есть добавленный товар$")
-    public void checkSoppingCartForItems() throws Throwable {
+    public void checkSoppingCartForItems() {
         scenario1.checkSoppingCartForItems();
     }
 
     @Тогда("^Нажать на удалить все$")
-    public void deleteItemsFromCart() throws Throwable {
+    public void deleteItemsFromCart() {
         scenario1.deleteItemsFromCart();
     }
 
     @Тогда("^Проверить, что корзина пуста$")
-    public void checkSoppingCartForEmpty() throws Throwable {
+    public void checkSoppingCartForEmpty() {
         scenario1.checkSoppingCartForEmpty();
     }
 }
